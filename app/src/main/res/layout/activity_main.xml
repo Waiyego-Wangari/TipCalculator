@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    //views on the left side of the screen
+
+    <TextView
+        android:id="@+id/tvBaseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="cursive"
+        android:text="Bill :"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTipPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="15%"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvBaseLabel" />
+
+    <TextView
+        android:id="@+id/tvTipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:fontFamily="cursive"
+        android:text="Tip :"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="@+id/tvTipPercentage"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipPercentage" />
+
+    <TextView
+        android:id="@+id/tvTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="cursive"
+        android:text="Grand Total :"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipLabel" />
+
+    <TextView
+        android:id="@+id/tvNumberofPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="cursive"
+        android:text="No. of People :"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalLabel" />
+
+    <TextView
+        android:id="@+id/tvTotalperPersonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="cursive"
+        android:text="Total per Person :"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumberofPeople" />
+
+
+
+
+    // views on the right side of the screen
+
+    <EditText
+        android:id="@+id/etBase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:ems="6"
+        android:hint="$"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvBaseLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvBaseLabel" />
+
+    <SeekBar
+        android:id="@+id/seekBarTip"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="30dp"
+        android:max="30"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTipPercentage"
+        app:layout_constraintStart_toEndOf="@+id/tvTipPercentage"
+        app:layout_constraintTop_toTopOf="@+id/tvTipPercentage"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvTipDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="cursive"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarTip"
+        app:layout_constraintStart_toStartOf="@+id/seekBarTip"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarTip"
+        tools:text="Acceptable" />
+
+    <ImageView
+        android:id="@+id/ivEmojiReaction"
+        android:layout_width="124dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="110dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipDescription"
+        tools:srcCompat="@drawable/new_great_emoji_pic" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTipLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvTipLabel"
+        tools:text="3.56" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalLabel"
+        tools:text="16.87" />
+
+    <EditText
+        android:id="@+id/etNumberofPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ems="3"
+        android:inputType="number"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvNumberofPeople"
+        app:layout_constraintStart_toEndOf="@+id/tvNumberofPeople"
+        tools:text="4" />
+
+    <TextView
+        android:id="@+id/tvTotalperPersonAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTotalperPersonLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalperPersonLabel"
+        tools:text="8.5" />
+
+
+
+    //Footer view
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="45dp"
+        android:fontFamily="cursive"
+        android:text="MADE WITH ♥ BY WAIYEGO"
+        android:textColor="@color/burgundy"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
