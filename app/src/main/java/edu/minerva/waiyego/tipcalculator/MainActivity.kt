@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         })
         //
         etBase.addTextChangedListener(object: TextWatcher{
-            //first 2 functions are not used but must be called
+            //first 2 functions are not used but must still be called
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             //function that allows a null input value in the edit text
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
         etNumberofPeople.addTextChangedListener(object: TextWatcher{
-           //first 2 functions are not used but must be called
+           //first 2 functions are not used but still must be called
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             //function that allows the edit text to stay empty
